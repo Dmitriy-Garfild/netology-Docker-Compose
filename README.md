@@ -59,17 +59,17 @@ https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 
 3 работа выполняется в windows, по этому линуксовые команды заменены на аналоги из PowerShell
 
-Get-Date -Format "dd-MM-yyyy HH:mm:ss.fffffff zzz"
+	Get-Date -Format "dd-MM-yyyy HH:mm:ss.fffffff zzz"
 
-docker ps
+	docker ps
 
-$port='8080'
+	$port='8080'
 
-Get-NetTcpConnection -State Listen | Where-Object {$_.LocalPort -eq "$port"} | Select-Object LocalAddress,LocalPort,OwningProcess,@{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object -Property LocalPort | Format-Table
+	Get-NetTcpConnection -State Listen | Where-Object {$_.LocalPort -eq "$port"} | Select-Object LocalAddress,LocalPort,OwningProcess,@{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object -Property LocalPort | Format-Table
 
-docker logs custom-nginx-t2 -n1
+	docker logs custom-nginx-t2 -n1
 
-docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html
+	docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html
 
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/6.PNG)
