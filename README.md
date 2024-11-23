@@ -22,9 +22,9 @@
 
 https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 
-![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/1.jpg)
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/1.PNG)
 
-![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/2.jpg)
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/2.PNG)
 
 
 
@@ -48,94 +48,105 @@ https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/3.PNG)
 
-![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/4.jpg)
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/4.PNG)
 
 
 2. переименуем контейнер
 
 	docker rename "otrepyev-D-A-custom-nginx-t2" "custom-nginx-t2"
 
-
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/5.PNG)
 
 3 работа выполняется в windows, по этому линуксовые команды заменены на аналоги из PowerShell
 
 
-PS C:\Users\Dim\Desktop\project\docker_compose_homework> Get-Date -Format "dd-MM-yyyy HH:mm:ss.fffffff zzz"
-19-11-2024 13:43:40.3711564 +03:00
-PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker ps
-CONTAINER ID   IMAGE                            	COMMAND              	CREATED      	STATUS      	PORTS                	NAMES
-615a2ebbd577   garfild406/netology_homework:1.0.0   "/docker-entrypoint.…"   11 minutes ago   Up 11 minutes   127.0.0.1:8080->80/tcp   custom-nginx-t2
-PS C:\Users\Dim\Desktop\project\docker_compose_homework> $port='8080'
-PS C:\Users\Dim\Desktop\project\docker_compose_homework> Get-NetTcpConnection -State Listen | Where-Object {$_.LocalPort -eq "$port"} | Select-Object LocalAddress,LocalPort,OwningProcess,@{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object -Property LocalPort | Format-Table
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework> Get-Date -Format "dd-MM-yyyy HH:mm:ss.fffffff zzz"
+  19-11-2024 13:43:40.3711564 +03:00
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker ps
+  CONTAINER ID   IMAGE                            	COMMAND              	CREATED      	STATUS      	PORTS                	NAMES
+  615a2ebbd577   garfild406/netology_homework:1.0.0   "/docker-entrypoint.…"   11 minutes ago   Up 11 minutes   127.0.0.1:8080->80/tcp   custom-nginx-t2
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework> $port='8080'
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework> Get-NetTcpConnection -State Listen | Where-Object {$_.LocalPort -eq "$port"} | Select-Object LocalAddress,LocalPort,OwningProcess,@{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object -Property LocalPort | Format-Table
 
-LocalAddress LocalPort OwningProcess Process
------------- --------- ------------- -------
-127.0.0.1     	8080      	6136 com.docker.backend
+  LocalAddress LocalPort OwningProcess Process
+  ------------ --------- ------------- -------
+  127.0.0.1     	8080      	6136 com.docker.backend
 
 
-PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker logs custom-nginx-t2 -n1
-172.17.0.1 - - [19/Nov/2024:10:33:29 +0000] "GET /favicon.ico HTTP/1.1" 404 153 "http://127.0.0.1:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0" "-"
-PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html
-PGh0bWw+DQo8aGVhZD4NCkhleSwgTmV0b2xvZ3kNCjwvaGVhZD4NCjxib2R5Pg0KPGgxPkkgd2ls
-bCBiZSBEZXZPcHMgRW5naW5lZXIhPC9oMT4NCjwvYm9keT4NCjwvaHRtbD4=
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker logs custom-nginx-t2 -n1
+  172.17.0.1 - - [19/Nov/2024:10:33:29 +0000] "GET /favicon.ico HTTP/1.1" 404 153 "http://127.0.0.1:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0" "-"
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html
+  PGh0bWw+DQo8aGVhZD4NCkhleSwgTmV0b2xvZ3kNCjwvaGVhZD4NCjxib2R5Pg0KPGgxPkkgd2ls
+  bCBiZSBEZXZPcHMgRW5naW5lZXIhPC9oMT4NCjwvYm9keT4NCjwvaHRtbD4=
 
-What's next:
-	Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug custom-nginx-t2
-	Learn more at https://docs.docker.com/go/debug-cli/
-PS C:\Users\Dim\Desktop\project\docker_compose_homework>
+  What's next:
+	  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug custom-nginx-t2
+	  Learn more at https://docs.docker.com/go/debug-cli/
+  PS C:\Users\Dim\Desktop\project\docker_compose_homework>
+
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/6.PNG)
 
 4.
 
-
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/7.PNG)
 
 
 
 Задача 3
-Воспользуйтесь docker help или google, чтобы узнать как подключиться к стандартному потоку ввода/вывода/ошибок контейнера "custom-nginx-t2".
-Подключитесь к контейнеру и нажмите комбинацию Ctrl-C.
-Выполните docker ps -a и объясните своими словами почему контейнер остановился.
-Перезапустите контейнер
-Зайдите в интерактивный терминал контейнера "custom-nginx-t2" с оболочкой bash.
-Установите любимый текстовый редактор(vim, nano итд) с помощью apt-get.
-Отредактируйте файл "/etc/nginx/conf.d/default.conf", заменив порт "listen 80" на "listen 81".
-Запомните(!) и выполните команду nginx -s reload, а затем внутри контейнера curl http://127.0.0.1:80 ; curl http://127.0.0.1:81.
-Выйдите из контейнера, набрав в консоли exit или Ctrl-D.
-Проверьте вывод команд: ss -tlpn | grep 127.0.0.1:8080 , docker port custom-nginx-t2, curl http://127.0.0.1:8080. Кратко объясните суть возникшей проблемы.
-Это дополнительное, необязательное задание. Попробуйте самостоятельно исправить конфигурацию контейнера, используя доступные источники в интернете. Не изменяйте конфигурацию nginx и не удаляйте контейнер. Останавливать контейнер можно. пример источника
-Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)
+1. Воспользуйтесь docker help или google, чтобы узнать как подключиться к стандартному потоку ввода/вывода/ошибок контейнера "custom-nginx-t2".
+2. Подключитесь к контейнеру и нажмите комбинацию Ctrl-C.
+3. Выполните docker ps -a и объясните своими словами почему контейнер остановился.
+4. Перезапустите контейнер
+5. Зайдите в интерактивный терминал контейнера "custom-nginx-t2" с оболочкой bash.
+6. Установите любимый текстовый редактор(vim, nano итд) с помощью apt-get.
+7. Отредактируйте файл "/etc/nginx/conf.d/default.conf", заменив порт "listen 80" на "listen 81".
+8. Запомните(!) и выполните команду nginx -s reload, а затем внутри контейнера curl http://127.0.0.1:80 ; curl http://127.0.0.1:81.
+9. Выйдите из контейнера, набрав в консоли exit или Ctrl-D.
+10. Проверьте вывод команд: ss -tlpn | grep 127.0.0.1:8080 , docker port custom-nginx-t2, curl http://127.0.0.1:8080. Кратко объясните суть возникшей проблемы.
+11. Удалите запущенный контейнер "custom-nginx-t2", не останавливая его.(воспользуйтесь --help или google)
 В качестве ответа приложите скриншоты консоли, где видно все введенные команды и их вывод.
+
+
 
 решение 3
 
 1 ,2,3
 
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/8.PNG)
 
 Ctrl-C. Эта комбинация отправляет сигнал прерывания (SIGINT) контейнеу, что обычно приводит к его остановке.
 
 4,5,6 
-docker exec -it custom-nginx-t2 bash
-apt-get update
-apt-get install nano
+  docker exec -it custom-nginx-t2 bash
+  apt-get update
+  apt-get install nano
+
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/9.PNG)
 
 
 
 7  nano /etc/nginx/conf.d/default.conf
 
-
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/10.PNG)
 
 
 8.
  
-
-9,10. т.к выполняется работа на windows я приведу скриншот что по старому порту , страничка не доступна т.к. мы поменяли слушаемый порт на 81
-
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/11.PNG)
 
 
+9,10. т.к выполняется работа на windows я приведу скриншот, показывающий, что по старому порту  страничка не доступна, т.к. мы поменяли слушаемый порт на 81
 
 
-11. docker rm -f custom-nginx-t2
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/12.PNG)
 
 
+11. 
+  docker rm -f custom-nginx-t2
+
+
+
+Это дополнительное, необязательное задание. Попробуйте самостоятельно исправить конфигурацию контейнера, используя доступные источники в интернете. Не изменяйте конфигурацию nginx и не удаляйте контейнер. Останавливать контейнер можно. пример источника
 
 
 Задача 4
@@ -150,20 +161,24 @@ apt-get install nano
 
 т.к. работаю в windows то просто подключу папку d:\docker
 
-docker run -it -v d:/docker:/data centos:centos7.9.2009
+  docker run -it -v d:/docker:/data centos:centos7.9.2009
+
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/13.PNG)
 
 
 команда it срезу дает нам доступ в нутрь и мы видим мой тестовый файл test.txt
 собственно второй конейнер и тоже все видно
 
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/14.PNG)
 
 добавим файл
 
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/15.PNG)
 
-ну я уже вижу в вижел студио что он у меня появился :) , также создал финальный файл в директории через вижел студию и сейчас посмотрим на другом контейнере.
+ну я уже вижу в вижел студио что у меня появился новый файл :) , также создал финальный файл в подключенной директории через вижел студию и сейчас посмотрим на другом контейнере.
 
 
-
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/16.PNG)
 
 
 
@@ -218,8 +233,18 @@ services:
 
 решение 5
 
-При выполнении команды docker compose up -d, будет запущен файл docker-compose.yaml, так как по умолчанию Docker Compose ищет файл именно с именем docker-compose.yaml.
+1. При выполнении команды docker compose up -d, будет запущен файл docker-compose.yaml, так как по умолчанию Docker Compose ищет файл именно с именем docker-compose.yaml.
 
+2.
+
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/17.PNG)
+
+3.
+
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/18.PNG)
+
+
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/19.PNG)
 
 
 
