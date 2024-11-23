@@ -47,6 +47,7 @@ https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 	docker run -d --name "otrepyev-D-A-custom-nginx-t2" -p 127.0.0.1:8080:80 garfild406/netology_homework:1.0.0
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/3.jpg)
+
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/4.jpg)
 
 2. переименуем контейнер
