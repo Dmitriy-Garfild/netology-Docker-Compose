@@ -58,31 +58,13 @@ https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/5.PNG)
 
 3 работа выполняется в windows, по этому линуксовые команды заменены на аналоги из PowerShell
+  Get-Date -Format "dd-MM-yyyy HH:mm:ss.fffffff zzz"
+  docker ps
+  $port='8080'
+  Get-NetTcpConnection -State Listen | Where-Object {$_.LocalPort -eq "$port"} | Select-Object LocalAddress,LocalPort,OwningProcess,@{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object -Property LocalPort | Format-Table
+  docker logs custom-nginx-t2 -n1
+  docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html
 
-
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework> Get-Date -Format "dd-MM-yyyy HH:mm:ss.fffffff zzz"
-  19-11-2024 13:43:40.3711564 +03:00
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker ps
-  CONTAINER ID   IMAGE                            	COMMAND              	CREATED      	STATUS      	PORTS                	NAMES
-  615a2ebbd577   garfild406/netology_homework:1.0.0   "/docker-entrypoint.…"   11 minutes ago   Up 11 minutes   127.0.0.1:8080->80/tcp   custom-nginx-t2
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework> $port='8080'
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework> Get-NetTcpConnection -State Listen | Where-Object {$_.LocalPort -eq "$port"} | Select-Object LocalAddress,LocalPort,OwningProcess,@{Name="Process";Expression={(Get-Process -Id $_.OwningProcess).ProcessName}} | Sort-Object -Property LocalPort | Format-Table
-
-  LocalAddress LocalPort OwningProcess Process
-  ------------ --------- ------------- -------
-  127.0.0.1     	8080      	6136 com.docker.backend
-
-
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker logs custom-nginx-t2 -n1
-  172.17.0.1 - - [19/Nov/2024:10:33:29 +0000] "GET /favicon.ico HTTP/1.1" 404 153 "http://127.0.0.1:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0" "-"
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework> docker exec -it custom-nginx-t2 base64 /usr/share/nginx/html/index.html
-  PGh0bWw+DQo8aGVhZD4NCkhleSwgTmV0b2xvZ3kNCjwvaGVhZD4NCjxib2R5Pg0KPGgxPkkgd2ls
-  bCBiZSBEZXZPcHMgRW5naW5lZXIhPC9oMT4NCjwvYm9keT4NCjwvaHRtbD4=
-
-  What's next:
-	  Try Docker Debug for seamless, persistent debugging tools in any container or image → docker debug custom-nginx-t2
-	  Learn more at https://docs.docker.com/go/debug-cli/
-  PS C:\Users\Dim\Desktop\project\docker_compose_homework>
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/6.PNG)
 
