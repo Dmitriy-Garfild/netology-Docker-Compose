@@ -48,7 +48,8 @@ https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/3.jpg)
 
-![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/4.jpg)
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/3.jpg)
+
 
 2. переименуем контейнер
 
