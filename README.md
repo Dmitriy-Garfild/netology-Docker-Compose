@@ -26,6 +26,8 @@ https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/2.jpg)
 
+
+
 Задача 2
 Запустите ваш образ custom-nginx:1.0.0 командой docker run в соответвии с требованиями:
 имя контейнера "ФИО-custom-nginx-t2"
