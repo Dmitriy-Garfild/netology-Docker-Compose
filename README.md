@@ -22,7 +22,7 @@
 
 https://hub.docker.com/repository/docker/garfild406/netology_homework/general
 
-https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/1.jpg
+![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/1.jpg)
 
 
 
