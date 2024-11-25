@@ -20,7 +20,7 @@
 
 ## решение 1
 
-https://hub.docker.com/repository/docker/garfild406/netology_homework/general
+https://hub.docker.com/r/garfild406/netology_homework/tags
 
 ![alt text](https://github.com/Dmitriy-Garfild/netology-Docker-Compose/blob/main/1.PNG)
 
